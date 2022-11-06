@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import useCheckboxes from "./password-checkboxes/useCheckboxes";
 import { strengthLevels } from "./strength-level/config";
@@ -20,7 +20,9 @@ function PasswordGenerator() {
   const [password, setPassword] = useState("");
   const [range, setRange] = useState("0");
 
-  const [value, copy] = useCopyToClipboard();
+  const [copied, setCopied] = useState(false);
+
+  const [, copy] = useCopyToClipboard();
 
   const strength = useMemo(() => getStrength(password), [password]);
 
@@ -50,18 +52,37 @@ function PasswordGenerator() {
     setPassword(pass);
   };
 
+  const onCopy = () => {
+    if (!password) return;
+    copy(password);
+    setCopied(true);
+  };
+
+  useEffect(() => {
+    if (copied) {
+      const timeout = setTimeout(() => {
+        setCopied(false);
+      }, 1300);
+      return () => clearTimeout(timeout);
+    }
+    return () => {};
+  }, [copied]);
+
   return (
     <StyledContainer>
       <Header>Password Generator</Header>
       <Password>
-        <span className="password-text">{password}</span>
-        <button
-          type="button"
-          className="copy-button"
-          onClick={() => copy(password)}
-        >
-          <CopyIcon />
-        </button>
+        {password ? (
+          <span className="password-text">{password}</span>
+        ) : (
+          <span className="password-text opacity">P4$5W0rD!</span>
+        )}
+        <div className="copy">
+          {copied && <span>Copied</span>}
+          <button type="button" className="copy-button" onClick={onCopy}>
+            <CopyIcon />
+          </button>
+        </div>
       </Password>
       <BodyContent>
         <div className="character-length">

@@ -6,6 +6,10 @@ const Checkboxes = styled.form`
   margin-top: 20px;
   width: 493px;
 
+  @media (max-width: 768px) {
+    width: 323px;
+  }
+
   fieldset {
     border: none;
     display: flex;
@@ -13,6 +17,10 @@ const Checkboxes = styled.form`
     align-items: flex-start;
     min-width: 400px;
     padding: 0;
+
+    @media (max-width: 768px) {
+      min-width: 240px;
+    }
   }
 
   label {

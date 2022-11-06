@@ -1,17 +1,5 @@
 import styled from "@emotion/styled";
 
-const Button = styled.button`
-  padding: 32px;
-  background-color: hotpink;
-  font-size: 24px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
-  &:hover {
-    color: white;
-  }
-`;
-
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,6 +17,10 @@ const PasswordStrength = styled.div`
   padding: 5px 25px;
   justify-content: space-between;
 
+  @media (max-width: 768px) {
+    width: 291px;
+  }
+
   .strength-wrapper {
     display: flex;
   }
@@ -42,6 +34,10 @@ const GenerateWrapper = styled.div`
   margin: 10px auto;
   padding: 5px 25px;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 291px;
+  }
 
   .generate-button {
     border: 2px solid hsl(127deg, 100%, 82%);
@@ -75,11 +71,19 @@ const BodyContent = styled.div`
   padding: 20px;
   background-color: #23222a;
 
+  @media (max-width: 768px) {
+    width: 323px;
+  }
+
   .character-length {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     width: 493px;
+
+    @media (max-width: 768px) {
+      width: 311px;
+    }
 
     .character-length-value {
       color: #a3ffae;
@@ -98,6 +102,10 @@ const BodyContent = styled.div`
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
     margin-top: 20px;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      width: 311px;
+    }
   }
   .range::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -128,6 +136,10 @@ const Password = styled.div`
   justify-content: space-between;
   padding: 0 20px;
 
+  @media (max-width: 768px) {
+    width: 323px;
+  }
+
   .password-text {
     font-weight: 700;
     font-size: 24px;
@@ -135,9 +147,18 @@ const Password = styled.div`
     color: #e7e6eb;
   }
 
+  .opacity {
+    opacity: 0.25;
+  }
+
   svg {
     cursor: pointer;
     fill: #a3ffae;
+  }
+
+  .copy {
+    display: flex;
+    align-items: center;
   }
 
   .copy-button {
@@ -147,7 +168,6 @@ const Password = styled.div`
 `;
 
 export {
-  Button,
   StyledContainer,
   Header,
   Password,
