@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const PasswordStrength = styled.div`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    width: 291px;
+    width: 260px;
   }
 
   .strength-wrapper {
@@ -36,7 +36,7 @@ const GenerateWrapper = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-    width: 291px;
+    width: 260px;
   }
 
   .generate-button {

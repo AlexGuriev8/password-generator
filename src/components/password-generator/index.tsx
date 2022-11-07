@@ -1,11 +1,11 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from 'react';
 
-import useCheckboxes from "./password-checkboxes/useCheckboxes";
-import { strengthLevels } from "./strength-level/config";
-import PasswordCheckBoxes from "./password-checkboxes";
-import StrengthLevel from "./strength-level";
-import CopyIcon from "./icons/copy-icon";
-import getStrength from "./utils";
+import useCheckboxes from './password-checkboxes/useCheckboxes';
+import { strengthLevels } from './strength-level/config';
+import PasswordCheckBoxes from './password-checkboxes';
+import StrengthLevel from './strength-level';
+import CopyIcon from './icons/copy-icon';
+import getStrength from './utils';
 import {
   Header,
   StyledContainer,
@@ -13,12 +13,12 @@ import {
   BodyContent,
   PasswordStrength,
   GenerateWrapper,
-} from "./styles";
-import useCopyToClipboard from "../../hooks/useCopyToClipboard";
+} from './styles';
+import useCopyToClipboard from '../../hooks/useCopyToClipboard';
 
 function PasswordGenerator() {
-  const [password, setPassword] = useState("");
-  const [range, setRange] = useState("0");
+  const [password, setPassword] = useState('');
+  const [range, setRange] = useState('0');
 
   const [copied, setCopied] = useState(false);
 
@@ -29,11 +29,11 @@ function PasswordGenerator() {
   const { handleCheckboxChange, labels, checkboxes } = useCheckboxes();
 
   const generatePassword = () => {
-    const defaultCharacters = "abcdefghijklmnopqrstuvwxyz";
+    const defaultCharacters = 'abcdefghijklmnopqrstuvwxyz';
     const characters = {
       uppercase: defaultCharacters.toUpperCase(),
-      numbers: "0123456789",
-      symbols: "~!@-#$",
+      numbers: '0123456789',
+      symbols: '~!@-#$',
     };
 
     const characterList = [
@@ -41,13 +41,13 @@ function PasswordGenerator() {
       ...(checkboxes.uppercase ? characters.uppercase : []),
       ...(checkboxes.numbers ? characters.numbers : []),
       ...(checkboxes.symbols ? characters.symbols : []),
-    ].join("");
+    ].join('');
 
     const pass = Array.from({ length: +range }, () =>
       Math.floor(Math.random() * characterList.length)
     )
       .map((number) => characterList[number])
-      .join("");
+      .join('');
 
     setPassword(pass);
   };
