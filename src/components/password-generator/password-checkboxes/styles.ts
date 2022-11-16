@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const Checkboxes = styled.form`
   display: flex;
@@ -44,7 +44,7 @@ const Checkboxes = styled.form`
 
     // circle
     &:before {
-      content: "";
+      content: '';
       display: block;
       box-sizing: content-box;
       width: 16px;
@@ -65,7 +65,7 @@ const Checkboxes = styled.form`
 
     // dot
     &:after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       box-sizing: content-box;
@@ -79,7 +79,7 @@ const Checkboxes = styled.form`
       transform: translate(-50%, -50%) scale(0);
     }
 
-    &[type="radio"] {
+    &[type='radio'] {
       &:before {
         border-radius: 100vh;
       }
@@ -96,7 +96,7 @@ const Checkboxes = styled.form`
       }
     }
 
-    &[type="checkbox"] {
+    &[type='checkbox'] {
       &:before {
         border-radius: 16px / 4;
       }
@@ -115,7 +115,7 @@ const Checkboxes = styled.form`
       }
     }
 
-    &[type="checkbox"].filled {
+    &[type='checkbox'].filled {
       &:before {
         border-radius: 16px / 4;
         transition: 0.2s border-color ease, 0.2s background-color ease;

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 
 import useCheckboxes from './password-checkboxes/useCheckboxes';
 import { strengthLevels } from './strength-level/config';
@@ -14,15 +14,13 @@ import {
   PasswordStrength,
   GenerateWrapper,
 } from './styles';
-import useCopyToClipboard from '../../hooks/useCopyToClipboard';
+import useCopied from '../../hooks/useCopied';
 
 function PasswordGenerator() {
   const [password, setPassword] = useState('');
   const [range, setRange] = useState('0');
 
-  const [copied, setCopied] = useState(false);
-
-  const [, copy] = useCopyToClipboard();
+  const { copied, onCopy } = useCopied();
 
   const strength = useMemo(() => getStrength(password), [password]);
 
@@ -51,22 +49,6 @@ function PasswordGenerator() {
 
     setPassword(pass);
   };
-
-  const onCopy = () => {
-    if (!password) return;
-    copy(password);
-    setCopied(true);
-  };
-
-  useEffect(() => {
-    if (copied) {
-      const timeout = setTimeout(() => {
-        setCopied(false);
-      }, 1300);
-      return () => clearTimeout(timeout);
-    }
-    return () => {};
-  }, [copied]);
 
   return (
     <StyledContainer>

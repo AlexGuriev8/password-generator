@@ -1,5 +1,5 @@
-import { PasswordCheckboxesProps } from "./types";
-import Checkboxes from "./styles";
+import { PasswordCheckboxesProps } from './types';
+import Checkboxes from './styles';
 
 function PasswordCheckBoxes({ onChange, labels }: PasswordCheckboxesProps) {
   return (

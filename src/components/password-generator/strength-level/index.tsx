@@ -1,6 +1,6 @@
-import { levels, colors } from "./config";
-import { StyledStrengthLevel, StyledLevel } from "./styles";
-import { LevelProps, Colors } from "./types";
+import { levels, colors } from './config';
+import { StyledStrengthLevel, StyledLevel } from './styles';
+import { LevelProps, Colors } from './types';
 
 function StrengthLevel({ level = 1 }: LevelProps) {
   const newLevels = levels.map((lev) => ({

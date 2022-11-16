@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback } from 'react';
 
 const useCheckboxes = () => {
   const [checkboxes, setCheckboxes] = useState({
@@ -21,28 +21,28 @@ const useCheckboxes = () => {
   const labels = useMemo(
     () => [
       {
-        id: "0",
-        labelText: "Include Uppercase Letters",
+        id: '0',
+        labelText: 'Include Uppercase Letters',
         checked: uppercase,
-        name: "uppercase",
+        name: 'uppercase',
       },
       {
-        id: "1",
-        labelText: "Include Lowercase Letters",
+        id: '1',
+        labelText: 'Include Lowercase Letters',
         checked: lowercase,
-        name: "lowercase",
+        name: 'lowercase',
       },
       {
-        id: "2",
-        labelText: "Include Numbers",
+        id: '2',
+        labelText: 'Include Numbers',
         checked: numbers,
-        name: "numbers",
+        name: 'numbers',
       },
       {
-        id: "3",
-        labelText: "Include Symbols",
+        id: '3',
+        labelText: 'Include Symbols',
         checked: symbols,
-        name: "symbols",
+        name: 'symbols',
       },
     ],
     [uppercase, lowercase, numbers, symbols]

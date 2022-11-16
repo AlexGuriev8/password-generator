@@ -1,16 +1,16 @@
-import { StrengthType } from "./strength-level/types";
+import { StrengthType } from './strength-level/types';
 
 const getStrength = (pass: string): StrengthType => {
   let strength = 0;
   const strongRegex = new RegExp(
-    "^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$",
-    "g"
+    '^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$',
+    'g'
   );
   const mediumRegex = new RegExp(
-    "^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$",
-    "g"
+    '^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$',
+    'g'
   );
-  const enoughRegex = new RegExp("(?=.{8,}).*", "g");
+  const enoughRegex = new RegExp('(?=.{8,}).*', 'g');
 
   if (strongRegex.test(pass)) {
     strength = 4;

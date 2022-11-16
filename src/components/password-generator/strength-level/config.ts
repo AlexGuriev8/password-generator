@@ -1,10 +1,10 @@
-import { Colors } from "./types";
+import { Colors } from './types';
 
 const strengthLevels = {
-  1: "VERY WEAK!",
-  2: "WEAK",
-  3: "MEDIUM",
-  4: "STRONG",
+  1: 'VERY WEAK!',
+  2: 'WEAK',
+  3: 'MEDIUM',
+  4: 'STRONG',
 };
 
 const levels = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
