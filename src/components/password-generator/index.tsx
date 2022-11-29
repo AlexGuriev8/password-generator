@@ -20,8 +20,7 @@ function PasswordGenerator() {
   const [password, setPassword] = useState('');
   const [range, setRange] = useState('0');
 
-  const { copied, onCopy } = useCopied();
-
+  const { copied, onCopy } = useCopied(password);
   const strength = useMemo(() => getStrength(password), [password]);
 
   const { handleCheckboxChange, labels, checkboxes } = useCheckboxes();
